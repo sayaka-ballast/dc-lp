@@ -1,0 +1,2055 @@
+@charset "UTF-8";
+
+/* ============================================
+   Google Fonts Import
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+/* ============================================
+   Variables & Global Settings
+   ============================================ */
+:root {
+    /* Colors */
+    --color-text: #2D3748;
+    /* 基本文字色 */
+    --color-text-sub: #93979A;
+    /* サブテキスト */
+    --color-main: #5980B7;
+    /* メイン（青） */
+    --color-main-2: #709EDF;
+    --color-main-3: #86ABDF;
+    --color-main-4: #B3CCEE;
+    --color-main-5: #B6D0F4;
+    --color-accent: #F97319;
+    /* アクセント（オレンジ） */
+
+    --color-sub-1: #93979A;
+    --color-sub-2: #A6A6A6;
+    --color-sub-3: #D9D9D9;
+    --color-white: #ffffff;
+
+    --color-base: rgba(89, 128, 183, 0.1);
+    /* 薄い青 */
+    --color-bg-light: #F7FAFC;
+    /* 薄いグレー背景 */
+
+    /* Layout */
+    --layout-width: 1140px;
+
+    /* Typography (Desktop) */
+    --fs-body: 16px;
+    --lh-body: 1.8;
+
+    --fs-h2: 36px;
+    --lh-h2: 1.4;
+
+    --fs-h3: 24px;
+    --lh-h3: 1.875;
+
+    /* 余白用のスケール */
+    --space-section-sm: 64px;
+    --space-section-md: 80px;
+    --space-section-lg: 112px;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--color-text);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    background-color: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+/* 共通コンテナ */
+.container {
+    width: 100%;
+    max-width: var(--layout-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+/* 共通セクションタイトル（大見出し） */
+.section_title {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 48px;
+    color: var(--color-text);
+    position: relative;
+}
+
+/* DCカード見出し用（h3） */
+.dc_card_title {
+    font-size: var(--fs-h3);
+    line-height: var(--lh-h3);
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+/* セクションの基本余白 */
+section {
+    padding: 80px 0;
+}
+
+/* =========================================
+   共通：通常の説明テキスト
+   ========================================= */
+.dc_text,
+.dc_card_text,
+.video_block_text,
+.guide_block_text,
+.support_text,
+.flow_text,
+.feature_text {
+    font-size: var(--fs-body);
+    /* 16px */
+    line-height: var(--lh-body);
+    /* 1.5 */
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+/* ============================================
+   Buttons（共通）
+   ============================================ */
+
+/* 無料相談（オレンジ・塗り） */
+.btn_consultation {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 165px;
+    height: 55px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    color: #fff;
+    background-color: var(--color-accent);
+    box-shadow: 0 6px 12px rgba(249, 115, 25, 0.36);
+    transition: 0.3s;
+}
+
+.btn_consultation:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 18px rgba(249, 115, 25, 0.45);
+}
+
+/* お問い合わせ（青フチ・白） */
+.btn_contact {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 165px;
+    height: 55px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    background-color: #ffffff;
+    color: var(--color-main);
+    border: 2px solid var(--color-main);
+    box-shadow: none;
+    transition: 0.3s;
+}
+
+.btn_contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(89, 128, 183, 0.3);
+}
+
+/* 資料ダウンロード（オレンジフチ・白） */
+.btn_download {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 165px;
+    height: 55px;
+    padding: 12px 12px;
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    background-color: var(--color-white);
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn_download:hover {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(249, 115, 25, 0.3);
+}
+
+/* ============================================
+   Header
+   ============================================ */
+
+.header {
+    width: 100%;
+    background-color: var(--color-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 80px;
+}
+
+.header .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_logo img {
+    height: 40px;
+    width: auto;
+}
+
+.header_actions {
+    display: flex;
+    gap: 16px;
+}
+
+/* 一応明示しておく（共通ボタンと同じサイズ） */
+.header_actions .btn_contact,
+.header_actions .btn_consultation {
+    width: 165px;
+    height: 55px;
+}
+
+/* ============================================
+   Main Visual (First View)
+   ============================================ */
+
+.first_view {
+    padding-top: 140px;
+    padding-bottom: var(--space-section-lg);
+
+    background-image: url('../img/fv-bg-blue.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+    background-color: #F7FAFC;
+}
+
+.first_view .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* 左側のコンテンツラッパー */
+.fv_content_wrapper {
+    width: 65%;
+    z-index: 1;
+}
+
+/* 青いボックス */
+.fv_blue_box {
+    background-color: #6A8EC3;
+    border-radius: 0;
+    width: 850px;
+    max-width: 100%;
+    padding: 40px 32px 32px;
+    color: var(--color-white);
+    text-align: center;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 20px rgba(89, 128, 183, 0.2);
+    position: relative;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 「小さな会社でも〜」 */
+.eyebrow {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 8px;
+    display: inline-block;
+    background: transparent;
+    padding: 0;
+}
+
+/* タイトル */
+.fv_blue_box h1 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 32px;
+    color: var(--color-white);
+    letter-spacing: 0.05em;
+}
+
+/* 3つの白い円 */
+.points_row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.points_row li {
+    background-color: var(--color-white);
+    color: var(--color-text);
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 0;
+}
+
+.circle_text {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* 下のサブタイトル */
+.subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 32px;
+    padding-left: 8px;
+    z-index: 1;
+}
+
+/* ボタンエリア（FV専用） */
+.fv_buttons_area {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding-left: 8px;
+}
+
+.btn_item {
+    text-align: center;
+}
+
+.btn_label {
+    font-size: 12px;
+    color: var(--color-sub-1);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* ★ ファーストビューのボタンだけ 200×60 に上書き */
+.fv_buttons_area .btn_contact,
+.fv_buttons_area .btn_consultation {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    letter-spacing: 0.08em;
+}
+
+/* 右側のイラスト */
+.main_visual {
+    width: 45%;
+    margin-left: -20px;
+    margin-top: 100px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.fv_image {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+}
+
+/* =========================
+   中小企業が導入で悩みやすいポイント
+   ========================= */
+
+.trouble_points {
+    position: relative;
+    padding: var(--space-section-md) 0;
+    background-color: var(--color-bg-light);
+    overflow: hidden;
+}
+
+.trouble_points .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "title title"
+        "illust cards";
+    column-gap: 60px;
+    row-gap: 40px;
+    align-items: center;
+}
+
+.trouble_points .section_title {
+    grid-area: title;
+    text-align: center;
+    font-size: var(--fs-h2);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.trouble_bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.trouble_bg img:first-child {
+    max-width: 1100px;
+    width: 80%;
+}
+
+.problem-illustration {
+    position: absolute;
+    left: 150px;
+    top: 140px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.problem-illustration img {
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.problem_cards {
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 32px 40px;
+    max-width: 760px;
+    margin-left: 20%;
+}
+
+.problem_cards .card {
+    background-color: var(--color-white);
+    border-radius: 32px;
+    padding: 24px 40px;
+    box-shadow: 0 18px 40px rgba(35, 67, 145, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.problem_cards .card h3 {
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.problem_cards .card h3 strong {
+    font-weight: 700;
+}
+
+/* ============================================
+   導入の不安をまとめて解決します！
+   ============================================ */
+
+.solution_intro {
+    background-color: #ffffff;
+    padding: var(--space-section-sm) 0;
+}
+
+.solution_intro .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.solution_intro .section_title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 36px;
+    display: inline-block;
+    transform: skewX(-8deg);
+}
+
+/* リード文 */
+.solution_lead {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* オレンジのマーカーっぽいバッジ */
+.badge_support {
+    display: inline-block;
+    padding: 4px 16px;
+    margin: 0 4px;
+    border-radius: 10px;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+/* ============================================
+   What is DC 企業型DCとはどんな制度？
+   ============================================ */
+
+.what_is_dc {
+    position: relative;
+    padding: var(--space-section-md) 0;
+    background-color: var(--color-bg-light);
+}
+
+.what_is_dc .section_title {
+    margin-bottom: 40px;
+}
+
+.dc_text {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 56px;
+}
+
+/* 3枚カード */
+.dc_cards {
+    display: flex;
+    justify-content: center;
+    gap: 56px;
+    padding: 0 32px;
+}
+
+.dc_card {
+    position: relative;
+    flex: 1;
+    background-color: var(--color-white);
+    min-width: 340px;
+    border-radius: 32px;
+    padding: 32px 32px 28px;
+    box-shadow: 0 18px 40px rgba(35, 67, 145, 0.12);
+    text-align: center;
+}
+
+/* 矢印 */
+.dc_card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -45px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 20px 0 20px 26px;
+    border-color: transparent transparent transparent #E0E9F8;
+    pointer-events: none;
+}
+
+/* タイトル＋上下オレンジライン */
+.dc_card_title {
+    font-size: var(--fs-h3);
+    font-weight: 650;
+    color: var(--color-text);
+    margin-bottom: 12px;
+    padding: 5px 0 5px;
+    position: relative;
+}
+
+.dc_card_title::before,
+.dc_card_title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 240px;
+    height: 2px;
+    border-radius: 999px;
+    background-color: var(--color-accent);
+    transform: translateX(-50%);
+}
+
+.dc_card_title::before {
+    top: 0;
+}
+
+.dc_card_title::after {
+    bottom: 0;
+}
+
+/* 説明文 */
+.dc_card_text {
+    height: 60px;
+    margin: 30px 0 10px;
+    text-align: center;
+}
+
+/* アイコン領域 */
+.dc_card_image {
+    height: 150px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dc_card_image img {
+    max-height: 100%;
+    width: auto;
+}
+
+/* 箇条書き（1,3枚目） */
+.dc_card_points {
+    text-align: left;
+    background-color: var(--color-white);
+    padding: 16px 18px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.dc_card_points li {
+    font-size: var(--fs-body);
+    margin-bottom: 8px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.dc_card_points li:last-child {
+    margin-bottom: 0;
+}
+
+.dc_card_points li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-size: var(--fs-body);
+    color: var(--color-main);
+}
+
+/* 2枚目のアイコンだけ少し下げる */
+.dc_cards .dc_card:nth-child(2) .dc_card_image {
+    margin-top: 50px;
+}
+
+.dc_card_points strong {
+    color: var(--color-accent);
+}
+
+.dc_card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 50px rgba(35, 67, 145, 0.20);
+    transition:
+        transform 0.6s cubic-bezier(0.19, 1, 0.22, 1),
+        box-shadow 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* ============================================
+   Video & Download 動画解説＆資料ダウンロード
+   ============================================ */
+
+.video_download {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0 200px;
+}
+
+.video_download .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 動画ブロック */
+.video_block {
+    background-color: var(--color-base);
+    border-radius: 20px;
+    padding: 60px 20px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* 左右レイアウト */
+.video_contents_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* 左：動画 */
+.video_block_left {
+    flex-shrink: 0;
+    width: 60%;
+    max-width: 600px;
+    font-size: var(--fs-h3);
+}
+
+.video_block_left .video_block_media {
+    width: 100%;
+    margin: 0;
+    aspect-ratio: 16 / 9;
+    position: relative;
+}
+
+.video_block_left .video_block_media iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 右：サムネイル枠 */
+.video_block_right {
+    flex-shrink: 0;
+    width: 35%;
+    max-width: 350px;
+    position: relative;
+    background-color: var(--color-white);
+    border: 6px solid var(--color-accent);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+/* 右側の三角 */
+.video_block_right::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -26px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 13px 20px 13px 0;
+    border-color: transparent var(--color-accent) transparent transparent;
+}
+
+.video_block_right img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+
+/* 下のテキスト */
+.video_block_body {
+    max-width: 800px;
+    margin: auto;
+}
+
+.video_block_label {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 16px;
+}
+
+.video_block_text {
+    text-align: left;
+}
+
+/* 資料ダウンロードブロック */
+.guide_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin: 80px 0;
+}
+
+/* サムネイル */
+.guide_block_thumb {
+    flex: 0 0 45%;
+    max-width: 450px;
+}
+
+.guide_block_thumb img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-sub-3);
+}
+
+/* テキスト側 */
+.guide_block_body {
+    flex: 1;
+}
+
+.guide_block_title {
+    font-size: var(--fs-h3);
+    line-height: var(--lh-h3);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 24px;
+}
+
+.guide_block_text {
+    margin-bottom: 32px;
+}
+
+.guide_block_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 区切り画像 */
+.video_divider_image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    z-index: 1;
+    background-image: url('../img/video-divider-image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+/* ============================================
+   Feature (Reasons)社長ひとりでも～
+   ============================================ */
+
+.feature_dc {
+    position: relative;
+    padding-top: var(--space-section-lg, 100px);
+    padding-bottom: 100px;
+    background-color: var(--color-white, #fff);
+    overflow: hidden;
+}
+
+.feature_dc .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    /* PC: 左にリスト、右に画像エリア */
+    grid-template-columns: 1fr 300px;
+    column-gap: 40px;
+    align-items: flex-start;
+}
+
+.feature_dc .section_title {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: var(--fs-h2, 32px);
+    font-weight: 700;
+    color: var(--color-text, #333);
+    margin-bottom: 60px;
+}
+
+/* リストエリア */
+.feature_list {
+    margin: 20px 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* PC版のカード間の隙間 */
+    gap: 80px;
+}
+
+/* カード共通設定 */
+.feature_item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* 修正: 元の固定幅に戻す（ただし、コンテナ幅に合わせて少し調整） */
+    width: 850px;
+    max-width: 950px;
+    /* これは残してOK */
+    height: 185px;
+    padding: 20px 30px;
+    border-radius: 25px;
+    background-color: var(--color-main);
+    box-shadow: 0 10px 25px rgba(92, 128, 176, 0.3);
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* PCのみ: 2つ目のカードを右にずらす */
+@media (min-width: 769px) {
+    .feature_item.is-second { /* HTMLに is-second クラスを追加しました */
+        margin-left: 140px; 
+    }
+}
+
+/* スマホ用画像はPCでは非表示（前回の設定を維持） */
+.feature_img_sp {
+    display: none;
+}
+
+/* 白い説明文ボックス */
+.feature_text {
+    margin: 0;
+    padding: 12px 20px;
+    border-radius: 20px;
+    background-color: var(--color-white);
+    /* 修正: PCでは max-width: 720px; を復活（固定幅が必要） */
+    max-width: 720px; 
+    min-height: 90px;
+    text-align: left !important;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* box-sizing: border-box; */
+}
+
+
+/* PC用の右側イラストエリア（復活） */
+.feature_illustrations.pc_only {
+    /* PCでは表示 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px;
+    padding-top: 40px;
+    /* PCのグリッドエリア（2列目）に配置 */
+    grid-column: 2 / 3; 
+}
+.feature_illustrations.pc_only img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    display: block;
+    transform: translateX(20px);
+}
+
+/* ============================================
+   Mobile Responsive (Max-width: 768px)
+   スマホ最適化設定
+   ============================================ */
+
+@media (max-width: 768px) {
+
+    .feature_dc {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    /* コンテナ設定：縦並びにする */
+    .feature_dc .container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px;
+        /* 画面端との余白 */
+    }
+
+    .feature_dc .section_title {
+        margin-bottom: 40px;
+        font-size: 22px;
+        /* 少しサイズ調整 */
+    }
+
+    /* リストの設定 */
+    .feature_list {
+        gap: 0;
+        width: 100%;
+    }
+
+    /* ▼ 青いカードの設定（ここを重点的に修正） */
+    .feature_item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        /* 親要素（グリッドの1fr部分）の幅いっぱいに広げる */
+        /* max-width: 950px; の設定は残してOK。
+       ただし、850pxなどの固定幅は削除します。 */
+        height: 185px;
+        padding: 20px 30px;
+        border-radius: 25px;
+        background-color: var(--color-main);
+        box-shadow: 0 10px 25px rgba(92, 128, 176, 0.3);
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    /* PC用のズレ設定をリセット */
+    .feature_item.is-second {
+        margin-left: 0;
+    }
+
+    /* 番号の設定 */
+    .feature_index {
+        font-size: 80px;
+        flex: auto;
+        margin-bottom: 10px;
+        -webkit-text-stroke: 2px #fff;
+    }
+
+    /* テキストを含むラッパー */
+    .feature_content {
+        margin-left: 0;
+        width: 100%;
+        /* 親要素(青い箱)の幅に合わせる */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature_title {
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 0 10px;
+        /* タイトルが端に行き過ぎないように少し余白 */
+    }
+
+    /* ▼ 白い説明文ボックス（ここを修正） */
+    .feature_text {
+        margin: 0;
+        padding: 12px 20px;
+        border-radius: 20px;
+        background-color: var(--color-white);
+        /* PCでは max-width: 720px; は削除、または
+       flex: 1; と width: 100%; を使用して幅を調整 */
+        max-width: none;
+        /* 削除して親の幅に依存させる */
+        min-height: 90px;
+        text-align: left !important;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        /* 念のため追加 */
+    }
+
+    /* ------------------------------
+       スマホ用イラスト表示設定
+       ------------------------------ */
+
+    .feature_img_sp {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+        /* 次のカードまでの余白 */
+        padding: 0 20px;
+        /* 画像左右に少し余裕を持たせる */
+        box-sizing: border-box;
+    }
+
+    .feature_img_sp img {
+        max-width: 240px;
+        width: 100%;
+        /* 親要素に合わせて縮小 */
+        height: auto;
+    }
+
+    /* PC用の画像エリアを非表示 */
+    .feature_illustrations.pc_only {
+        display: none;
+    }
+}
+
+/* ------------------------------
+       スマホ用イラスト表示設定
+       ------------------------------ */
+
+/* スマホ用画像を表示 */
+.feature_img_sp {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    /* 次のカードまでの余白 */
+}
+
+.feature_img_sp img {
+    max-width: 240px;
+    /* イラストが大きすぎないように調整 */
+    width: 80%;
+    height: auto;
+}
+
+/* PC用の画像エリアを非表示 */
+.feature_illustrations.pc_only {
+    display: none;
+}
+
+/* ============================================
+   Support System
+   ============================================ */
+
+.support_system {
+    padding: var(--space-section-lg) 0;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.support_system .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.support_system .section_title {
+    text-align: center;
+    font-size: var(--fs-h2);
+    font-weight: 700;
+    margin-bottom: 100px;
+    color: var(--color-text);
+}
+
+/* リスト */
+.support_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.support_step {
+    width: 100%;
+    position: relative;
+}
+
+.support_step+.support_step {
+    margin-top: 160px;
+}
+
+/* 2つ目以降の上の波 */
+.support_step+.support_step::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100%;
+    width: 100%;
+    max-width: 1200px;
+    height: 180px;
+    background: url("../img/support-wave.png") no-repeat center bottom;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 3つ目用の別画像 */
+.support_step:nth-child(3)::before {
+    background-image: url("../img/support-wave2.png");
+}
+
+/* 本体レイアウト */
+.support_point {
+    display: grid;
+    padding-left: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    max-width: 1440px;
+}
+
+.support_visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 480px;
+}
+
+.support_visual img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    display: block;
+}
+
+.support_body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 650px;
+}
+
+.support_icon {
+    width: 140px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.support_title {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 24px 0;
+    color: var(--color-text);
+}
+
+.support_text {
+    margin: 0;
+    text-align: left;
+}
+
+.support_text strong {
+    font-weight: 700;
+    background: linear-gradient(transparent 70%, #dbeeff 70%);
+}
+
+/* ジグザグ配置 */
+.support_step:nth-child(odd) .support_visual {
+    order: 1;
+}
+
+.support_step:nth-child(odd) .support_body {
+    order: 2;
+}
+
+.support_step:nth-child(even) .support_visual {
+    order: 2;
+}
+
+.support_step:nth-child(even) .support_body {
+    order: 1;
+}
+
+
+/* ============================================
+   Flow
+   ============================================ */
+
+.flow {
+    background-color: var(--color-base);
+    margin-top: var(--space-section-md);
+}
+
+.flow .section_title {
+    margin-bottom: 100px;
+}
+
+.flow_steps {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.flow_step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* 点線 */
+.flow_step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 67px;
+    top: 140px;
+    bottom: 4px;
+    border-left: 2px dashed #4A5568;
+    z-index: 0;
+}
+
+/* 矢印 */
+.flow_step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: calc(67px - 6px);
+    bottom: 4px;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #4A5568;
+    border-bottom: 2px solid #4A5568;
+    transform: rotate(45deg);
+    z-index: 0;
+}
+
+
+.flow_step>img {
+    width: 135px;
+    flex-shrink: 0;
+}
+
+.step_card {
+    flex: 0 0 1000px;
+    display: flex;
+    align-items: center;
+    background: var(--color-white);
+    border: 1px solid var(--color-sub-3);
+    max-width: 935px;
+    width: 100%;
+    min-height: 175px;
+    border-radius: 45px;
+    padding: 24px 12px 24px 54px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 36px;
+}
+
+.step_card>img {
+    width: 90px;
+    margin-right: 36px;
+}
+
+.card_content {
+    flex: 1;
+    max-width: 720px;
+}
+
+.flow_title {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 18px;
+}
+
+/* ============================================
+   CTA
+   ============================================ */
+
+.cta {
+    position: relative;
+    padding: 40px 0;
+    background-color: var(--color-main-4);
+    overflow: hidden;
+}
+
+/* 背景模様 */
+.cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../img/cta-bg-pattern.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    pointer-events: none;
+}
+
+.cta .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* 白いカード */
+.cta_box {
+    max-width: 875px;
+    min-width: 275px;
+    margin: 20px auto;
+    padding: 25px 0;
+    background-color: var(--color-white);
+    border-radius: 60px;
+    box-shadow: 0 24px 45px rgba(16, 40, 79, 0.25);
+    text-align: center;
+}
+
+.cta_box .section_title {
+    margin-bottom: 24px;
+}
+
+.cta_text {
+    margin: 0 0 48px;
+
+}
+
+/* ボタン */
+.cta_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+}
+
+.cta_button {
+    text-align: center;
+}
+
+.cta_note {
+    font-size: 12px;
+    margin-bottom: 12px;
+    color: var(--color-text-sub1);
+}
+
+
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 56px 0 20px;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #e5e7eb;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #f97316;
+}
+
+/* 上段全体 */
+.footer_top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+/* 左カラム */
+.footer_left {
+    flex: 1 1 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer_brand {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 32px;
+}
+
+.footer_logo img {
+    height: 50px;
+    width: auto;
+}
+
+.footer_badges {
+    background-color: var(--color-white);
+}
+
+.footer_badges img {
+    height: 80px;
+    margin-right: 6px;
+}
+
+.footer_corporate_name {
+    width: 100%;
+    margin-top: 4px;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+}
+
+.footer_left_body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer_offices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 40px;
+    margin-bottom: 20px;
+}
+
+.office_title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #999;
+}
+
+.office_text {
+    font-size: 14px;
+    line-height: 2.2;
+    color: #999;
+}
+
+.footer_telfax {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: #999;
+}
+
+/* 右カラム */
+.footer_right {
+    flex: 0 0 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+    margin-top: 40px;
+    /* 260px → 少しだけ下げる程度に */
+}
+
+.footer_policies {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.footer_policies li+li {
+    margin-top: 8px;
+}
+
+.footer_policies a {
+    font-size: 14px;
+}
+
+/* ページトップボタン（見た目） */
+.btn_pagetop {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #999;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+/* 縦棒 */
+.btn_pagetop::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 22px;
+    background: #999;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 矢印 */
+.btn_pagetop::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-left: 3px solid #999;
+    border-top: 3px solid #999;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.btn_pagetop:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+/* 画面右下に固定（JSで表示/非表示制御予定） */
+.btn_pagetop {
+    position: fixed;
+    right: 36px;
+    bottom: 48px;
+    z-index: 1000;
+}
+
+/* コピーライト */
+.footer_bottom {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 15px;
+    color: #9ca3af;
+}
+
+.footer_bottom small {
+    letter-spacing: 0.05em;
+}
+
+/* ============================================
+   Mobile Responsive (Max-width: 768px)
+   スマホ版デザインカンプへの最適化
+   ============================================ */
+
+@media (max-width: 768px) {
+
+    /* --- Global Settings --- */
+    :root {
+        --fs-h2: 24px;
+        --fs-h3: 18px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+    /* --- Header --- */
+    .header {
+        height: 60px;
+    }
+
+    .header_logo img {
+        height: 30px;
+    }
+
+    .header_actions .btn_contact,
+    .header_actions .btn_consultation {
+        width: auto;
+        min-width: 80px;
+        height: 36px;
+        font-size: 11px;
+        padding: 0 10px;
+    }
+
+    /* --- 1. First View (FV) : 形を保ったまま縮小 --- */
+    .first_view {
+        padding-top: 80px;
+        /* ヘッダー分＋ちょい余白 */
+        padding-bottom: 32px;
+    }
+
+    .first_view .container {
+        display: block;
+        /* PC の横並びレイアウトは解除 */
+    }
+
+    .fv_content_wrapper {
+        width: 100%;
+    }
+
+    /* ■ 青いボックス  */
+    .fv_blue_box {
+        width: 100%;
+        max-width: 85%;
+        margin: 0 auto 24px;
+        /* 中央寄せ＋下に余白 */
+        padding: 24px 16px 28px;
+        box-sizing: border-box;
+        min-height: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 上の「小さな会社でも導入できる」 */
+    .eyebrow {
+        font-size: 18px;
+        margin-bottom: 8px;
+        white-space: nowrap;
+        /* 折り返し禁止 */
+    }
+
+    /* 企業型確定拠出年金 → 一行死守 */
+    .fv_blue_box h1 {
+        font-size: 36px;
+        line-height: 1.3;
+        margin-bottom: 24px;
+        white-space: nowrap;
+        /* 折り返し禁止 */
+    }
+
+    /* 3つの丸をボックス内に収める */
+    .points_row {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .points_row li {
+        width: 96px;
+        height: 96px;
+        /* 正円固定 */
+        border-radius: 50%;
+        padding: 0;
+    }
+
+    .circle_text {
+        font-size: 13px;
+        line-height: 1.3;
+    }
+
+    /* サブタイトル（青ボックスの下の説明文） */
+    .subtitle {
+        font-size: 14px;
+        line-height: 1.8;
+        max-width: 360px;
+        margin: 0 auto 24px;
+        text-align: center;
+    }
+
+    /* イラストを青ボックスの下に配置 */
+    .main_visual {
+        width: 320px;
+        max-width: 90%;
+        margin: 40px auto 20px;
+    }
+
+    /* ボタンを縦並びに */
+    .fv_buttons_area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .fv_buttons_area .btn_consultation,
+    .fv_buttons_area .btn_contact {
+        width: 200px;
+        /* 横幅はスマホで見やすいくらい */
+        max-width: 100%;
+        height: 55px;
+        font-size: 16px;
+    }
+
+
+
+    /* --- 2. Trouble Points : 2列維持 & イラスト配置 --- */
+    .trouble_points .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trouble_points .section_title {
+        order: 1;
+        /* 1番目 */
+        margin-bottom: 20px;
+    }
+
+    .problem_cards {
+        order: 2;
+        /* 2番目 */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* 2列グリッドを維持 */
+        gap: 12px;
+        /* スマホ用に隙間を調整 */
+        margin-left: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* イラストをタイトルとカードの下に配置 */
+    .problem-illustration {
+        order: 3;
+        /* 3番目 */
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 0 auto 30px;
+        /* 下に余白 */
+        width: 80%;
+        max-width: 350px;
+    }
+
+
+
+    .problem_cards .card {
+        padding: 16px 8px;
+        /* 内側の余白を詰める */
+        min-height: 110px;
+        border-radius: 16px;
+    }
+
+    .problem_cards .card h3 {
+        font-size: 15px;
+        /* 文字サイズ調整 */
+        line-height: 1.5;
+    }
+
+    .solution_intro {
+        background-color: #ffffff;
+        padding: var(--space-section-sm) 0;
+    }
+
+    .solution_intro .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .solution_intro .section_title {
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 1.6;
+        margin-bottom: 36px;
+        display: inline-block;
+        transform: skewX(-8deg);
+    }
+
+    /* リード文 */
+    .solution_lead {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    /* オレンジのマーカーっぽいバッジ */
+    .badge_support {
+        display: inline-block;
+        padding: 4px 16px;
+        margin: 0 4px;
+        border-radius: 10px;
+        background-color: var(--color-accent);
+        color: var(--color-white);
+        font-weight: 700;
+        font-size: 24px;
+        white-space: nowrap;
+    }
+
+
+    /* --- 4. DC Cards : リストをセンター配置 --- */
+    .dc_cards {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0;
+        align-items: center;
+
+    }
+
+    .dc_card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* 矢印を下向きに変更 */
+    .dc_card:not(:last-child)::after {
+        top: auto;
+        bottom: -30px;
+        right: 50%;
+        transform: translateX(50%) rotate(90deg);
+        border-color: transparent transparent transparent #E0E9F8;
+    }
+
+    /* リストブロックの中央寄せ */
+    .dc_card_points {
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        /* 中身に合わせて幅を決定 */
+    }
+
+
+    /* --- 4. Video & Download : 三角を上向きに --- */
+    .video_contents_wrap {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        /* 上下の間隔 */
+    }
+
+    .video_block_left,
+    .video_block_right {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* 三角の設定変更 */
+    .video_block_right::before {
+        top: -26px;
+        /* 枠の上に配置 */
+        left: 50%;
+        /* 左向きの三角(border-rightに色)を90度回転(時計回り)させて上向きにする */
+        transform: translateX(-50%) rotate(90deg);
+
+        /* 参考：元のborder設定 */
+        /* border-width: 13px 20px 13px 0; */
+        /* border-color: transparent var(--color-accent) transparent transparent; */
+    }
+
+    .guide_block {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+
+    /* セクション全体のレイアウト（Grid解除） */
+    .feature_dc .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    /* 青いカード（Feature Item）のスタイル */
+    .feature_item {
+        flex-direction: column;
+        /* 中身を縦並びに（数字→タイトル→白枠） */
+        height: auto;
+        /* PC版の高さ固定(185px)を解除 */
+        width: 100%;
+        /* 幅を親要素に合わせる */
+        max-width: 400px;
+        /* 横に広がりすぎないように制限 */
+        padding: 40px 24px;
+        /* 上下の余白を確保 */
+        margin: 0 auto;
+        /* 中央寄せ */
+        text-align: center;
+        /* テキストを中央揃え */
+        box-sizing: border-box;
+    }
+
+    /* 2つ目のカードのズレ（PC用）をリセット */
+    .feature_item:nth-child(2) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* リストの間隔 */
+    .feature_list {
+        gap: 40px;
+        /* カードごとの間隔 */
+        width: 100%;
+    }
+
+    /* 数字（01, 02...） */
+    .feature_index {
+        font-size: 60px;
+        /* スマホ用に少し小さく調整 */
+        margin-bottom: 10px;
+        /* タイトルとの余白 */
+        flex: 0 0 auto;
+        /* PC版の幅固定を解除 */
+    }
+
+    /* タイトル＋説明文のエリア */
+    .feature_content {
+        margin-left: 0;
+        /* PC版の左余白を削除 */
+        width: 100%;
+        /* 幅いっぱい */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* タイトル */
+    .feature_title {
+        font-size: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* 白い説明ボックス */
+    .feature_text {
+        width: 100%;
+        margin: 0;
+        min-height: auto;
+        /* 高さ制限解除 */
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: left !important;
+        /* 文章は左揃え */
+    }
+
+    /* ※注意：HTML構造上、イラストを「カードの間」に入れるのはCSSだけでは不可能なため、
+   スマホではPC用の右側イラストエリアを非表示にするか、一番下に配置します */
+    .feature_illustrations {
+        display: none;
+    }
+
+    .support_point {
+        padding: 0;
+        gap: 20px;
+    }
+
+    .support_step:nth-child(odd) .support_visual,
+    .support_step:nth-child(even) .support_visual {
+        order: 1;
+    }
+
+    .support_step:nth-child(odd) .support_body,
+    .support_step:nth-child(even) .support_body {
+        order: 2;
+    }
+
+    .support_step+.support_step {
+        margin-top: 80px;
+    }
+
+    .flow_step {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 40px;
+    }
+
+    .flow_step:not(:last-child)::before,
+    .flow_step:not(:last-child)::after {
+        display: none;
+    }
+
+    .step_card {
+        flex-direction: column;
+        width: 80%;
+        padding: 24px;
+        text-align: center;
+        max-height: 320px;
+    }
+
+    .step_card>img {
+        margin: 0 0 16px 0;
+        width: 60px;
+    }
+
+    .flow_text {
+        text-align: left;
+        margin: 12px;
+    }
+
+    .cta_box {
+        max-width: 380px;
+    }
+
+    .cta_buttons {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .footer_top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_right {
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .footer_policies {
+        text-align: center;
+    }
+}
