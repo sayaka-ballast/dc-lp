@@ -391,129 +391,143 @@ section {
    中小企業が導入で悩みやすいポイント
    ========================= */
 
-.trouble_points{
-  position: relative;
-  padding: clamp(56px, 6vw, 88px) 0;
-  background-color: var(--color-bg-light);
-  overflow: hidden;
+.trouble_points {
+    position: relative;
+    padding: clamp(56px, 6vw, 88px) 0;
+    background-color: var(--color-bg-light);
+    overflow: hidden;
 }
 
-.trouble_points .container{
-  position: relative;
-  z-index: 2;
-  max-width: 1440px;
-  margin: 0 auto;
+.trouble_points .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1440px;
+    margin: 0 auto;
 
-  display: grid;
-  grid-template-areas:
-    "title title"
-    "illust cards";
+    display: grid;
+    grid-template-areas:
+        "title title"
+        "illust cards";
 
-  /* ▼【変更点1】比率を見直し、中央配置を安定させる
+    /* ▼【変更点1】比率を見直し、中央配置を安定させる
      以前の「28vw 1fr」だと右の余白が広すぎたため、
      コンテンツ幅の比率（イラスト:カード ≒ 1:1.6）に近い比率に設定 */
-  grid-template-columns: 1fr 1.6fr;
-  
-  /* 中央の結合部分の余白 */
-  column-gap: clamp(24px, 4vw, 48px); /* 少し広げてバランス調整 */
-  row-gap: clamp(18px, 3vw, 32px);
-  align-items: center;
+    grid-template-columns: 1fr 1.6fr;
 
-  padding: 0 clamp(16px, 2vw, 24px);
+    /* 中央の結合部分の余白 */
+    column-gap: clamp(24px, 4vw, 48px);
+    /* 少し広げてバランス調整 */
+    row-gap: clamp(18px, 3vw, 32px);
+    align-items: center;
+
+    padding: 0 clamp(16px, 2vw, 24px);
 }
 
-.trouble_points .section_title{
-  grid-area: title;
-  text-align: center;
-  font-size: var(--fs-h2);
-  line-height: 1.5;
-  margin-bottom: clamp(18px, 3vw, 28px);
+.trouble_points .section_title {
+    grid-area: title;
+    text-align: center;
+    font-size: var(--fs-h2);
+    line-height: 1.5;
+    margin-bottom: clamp(18px, 3vw, 28px);
 }
 
-.trouble_bg{
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-  z-index: 0;
+.trouble_bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 0;
 }
 
-.trouble_bg img:first-child{
-  max-width: 1100px;
-  width: 80%;
+.trouble_bg img:first-child {
+    max-width: 1100px;
+    width: 80%;
 }
 
 /* ------------------------------
    左：イラスト
    ------------------------------ */
-.problem-illustration{
-  grid-area: illust;
-  position: relative;
-  left: auto;
-  top: auto;
+.problem-illustration {
+    grid-area: illust;
+    position: relative;
+    left: auto;
+    top: auto;
 
-  /* ▼【変更点2】右（中央側）に寄せる */
-  justify-self: end;
-  align-self: center;
+    /* ▼【変更点2】右（中央側）に寄せる */
+    justify-self: end;
+    align-self: center;
 
-  width: clamp(300px, 26vw, 460px);
+    width: clamp(300px, 26vw, 460px);
 
-  z-index: 1;
-  pointer-events: none;
+    z-index: 1;
+    pointer-events: none;
 }
 
-.problem-illustration img{
-  width: 100%;
-  height: auto;
-  display: block;
+.problem-illustration img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ------------------------------
    右：カード群
    ------------------------------ */
-.problem_cards{
-  grid-area: cards;
+.problem_cards {
+    grid-area: cards;
 
-  display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 1fr));
-  gap: clamp(14px, 2vw, 24px);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: clamp(14px, 2vw, 24px);
 
-  max-width: 840px;
-  
-  /* ▼【変更点3】左（中央側）に寄せる */
-  justify-self: start;
-  /* 幅を確保して崩れを防ぐ */
-  width: 100%; 
+    max-width: 840px;
 
-  margin: 0;
-  z-index: 2;
+    /* ▼【変更点3】左（中央側）に寄せる */
+    justify-self: start;
+    /* 幅を確保して崩れを防ぐ */
+    width: 100%;
+
+    margin: 0;
+    z-index: 2;
 }
 
-.problem_cards .card{
-  background-color: var(--color-white);
-  border-radius: clamp(18px, 2vw, 28px);
-  padding: clamp(16px, 2vw, 22px) clamp(18px, 2.2vw, 28px);
-  box-shadow: 0 18px 40px rgba(35, 67, 145, 0.12);
+.problem_cards .card {
+    background-color: var(--color-white);
+    border-radius: clamp(18px, 2vw, 28px);
+    padding: clamp(16px, 2vw, 22px) clamp(18px, 2.2vw, 28px);
+    box-shadow: 0 18px 40px rgba(35, 67, 145, 0.12);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  min-height: clamp(110px, 9vw, 130px);
-  text-align: center;
-  position: relative;
+    min-height: clamp(110px, 9vw, 130px);
+    text-align: center;
+    position: relative;
 }
 
-.problem_cards .card h3{
-  font-size: clamp(15px, 1.2vw, 18px);
-  line-height: 1.6;
-  font-weight: 400;
+.problem_cards .card h3 {
+    font-size: clamp(15px, 1.2vw, 18px);
+    line-height: 1.6;
+    font-weight: 400;
 }
 
-.problem_cards .card h3 strong{
-  font-weight: 700;
+.problem_cards .card h3 strong {
+    font-weight: 700;
+}
+
+@media (max-width: 980px) {
+    .problem_cards {
+        grid-template-columns: 1fr;
+        /* 1列に落とす */
+        max-width: 520px;
+        justify-self: center;
+    }
+
+    .problem-illustration {
+        justify-self: center;
+    }
 }
 
 /* ============================================
@@ -1031,121 +1045,6 @@ section {
 
 
 /* ============================================
-   Mobile Responsive (Max-width: 768px)
-   スマホ最適化設定（最終修正版）
-   ============================================ */
-
-@media (max-width: 768px) {
-
-    /* 変数上書き */
-    :root {
-        --fs-h2: 24px;
-        --fs-h3: 18px;
-    }
-
-    .feature_dc {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-    /* コンテナ設定：縦並びにする */
-    .feature_dc .container {
-        display: flex;
-        flex-direction: column;
-        padding: 24px;
-    }
-
-    .feature_dc .section_title {
-        margin-bottom: 40px;
-        font-size: var(--fs-h2);
-    }
-
-    /* リストの設定 */
-    .feature_list {
-        gap: 0;
-        width: 100%;
-    }
-
-    /* ▼ 青いカードの設定 */
-    .feature_item {
-        flex-direction: column;
-        height: auto;
-        width: 100%;
-        max-width: 900%;
-        padding: 18px;
-        margin-bottom: 40px;
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-    /* PC用のズレ設定をリセット */
-    .feature_item.is-second {
-        margin-left: 0;
-    }
-
-    /* 番号の設定 */
-    .feature_index {
-        font-size: 80px;
-        flex: auto;
-        margin-bottom: 10px;
-        -webkit-text-stroke: 2px #fff;
-        flex: 0 0 auto;
-        /* PC用の固定幅を解除 */
-    }
-
-    /* テキストを含むラッパー */
-    .feature_content {
-        margin-left: 0;
-        width: 100%;
-        align-items: center;
-    }
-
-    .feature_title {
-        font-size: var(--fs-h3);
-        text-align: center;
-        margin-bottom: 20px;
-        padding: 0 10px;
-    }
-
-    /* ▼ 白い説明文ボックス */
-    .feature_text {
-        width: 100%;
-        max-width: 100%;
-        min-height: auto;
-
-        padding: 15px;
-        box-sizing: border-box;
-
-        text-align: left !important;
-    }
-
-    /* ------------------------------
-       スマホ用イラスト表示設定
-       ------------------------------ */
-
-    /* スマホ用画像を表示 */
-    .feature_img_sp {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 40px;
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
-
-    .feature_img_sp img {
-        max-width: 240px;
-        width: 80%;
-        height: auto;
-    }
-
-    /* PC用の画像エリアを非表示 */
-    .feature_illustrations.pc_only {
-        display: none;
-    }
-}
-
-/* ============================================
    Support System
    ============================================ */
 
@@ -1435,7 +1334,7 @@ section {
 .cta_note {
     font-size: 12px;
     margin-bottom: 12px;
-    color: var(--color-text-sub1);
+    color: var(--color-text-sub);
 }
 
 
@@ -1544,7 +1443,7 @@ section {
 
 /* 右カラム */
 .footer_right {
-    flex: 0 0 360;
+    flex: 0 0 360px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -1640,588 +1539,580 @@ section {
    ========================================= */
 @media (max-width: 768px) {
 
-    /* ------------------------------
-     Global Typography / Spacing
-     ------------------------------ */
-    :root {
-        --fs-body: 15px;
-        --lh-body: 1.8;
-
-        --fs-h2: 28px;
-        /* h2小さい問題を解消 */
-        --lh-h2: 1.35;
-
-        --fs-h3: 20px;
-        --lh-h3: 1.55;
-    }
-
-    .container {
-        padding: 0 16px;
-    }
-
-    section {
-        padding: 50px 0;
-    }
-
-    /* h2 共通 */
-    .section_title {
-        font-size: var(--fs-h2);
-        line-height: var(--lh-h2);
-        margin-bottom: 32px;
-    }
-
-    /* h3 共通（各所のバラつき止め） */
-    .dc_card_title,
-    .guide_block_title,
-    .video_block_label,
-    .support_title,
-    .flow_title,
-    .feature_title {
-        font-size: var(--fs-h3);
-        line-height: var(--lh-h3);
-    }
-
-    /* 本文 共通 */
-    .dc_text,
-    .dc_card_text,
-    .video_block_text,
-    .guide_block_text,
-    .support_text,
-    .flow_text,
-    .feature_text {
-        font-size: var(--fs-body);
-        line-height: var(--lh-body);
-    }
-
-    /* solution_intro は除外（既存の見た目を維持） */
-    .solution_intro .section_title {
-        font-size: 42px;
-        font-weight: 700;
-        line-height: 1.6;
-        margin-bottom: 36px;
-        display: inline-block;
-        transform: skewX(-8deg);
-    }
-
-    .solution_lead {
-        font-size: 20px;
-        line-height: 1.5;
-    }
-
-    .badge_support {
-        display: inline-block;
-        padding: 4px 16px;
-        margin: 0 4px;
-        border-radius: 10px;
-        background-color: var(--color-accent);
-        color: var(--color-white);
-        font-weight: 700;
-        font-size: 24px;
-        white-space: nowrap;
-    }
-
-    /* ------------------------------
-     Header（ボタン小さすぎ対策）
-     ------------------------------ */
-    .header {
-        height: 60px;
-    }
-
-    .header_logo img {
-        height: 30px;
-    }
-
-    .header_actions {
-        gap: 10px;
-    }
-
-    .header_actions .btn_contact,
-    .header_actions .btn_consultation {
-        width: auto;
-        min-width: 130px;
-        height: 44px;
-        font-size: 14px;
-        padding: 0 14px;
-    }
-
-    /* ------------------------------
-     1. First View
-     ------------------------------ */
-    .first_view {
-        padding-top: 80px;
-        padding-bottom: 32px;
-    }
-
-    .first_view .container {
-        display: block;
-    }
-
-    .fv_content_wrapper {
-        width: 100%;
-    }
-
-    .fv_blue_box {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto 24px;
-        padding: 24px 16px 28px;
-        box-sizing: border-box;
-        min-height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .eyebrow {
-        font-size: 18px;
-        margin-bottom: 8px;
-        white-space: nowrap;
-    }
-
-    .fv_blue_box h1 {
-        font-size: 36px;
-        line-height: 1.3;
-        margin-bottom: 24px;
-        white-space: nowrap;
-    }
-
-    .points_row {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        width: 100%;
-    }
-
-    .points_row li {
-        width: 96px;
-        height: 96px;
-        border-radius: 50%;
-        padding: 0;
-    }
-
-    .circle_text {
-        font-size: 13px;
-        line-height: 1.3;
-    }
-
-    .subtitle {
-        font-size: 14px;
-        line-height: 1.8;
-        max-width: 360px;
-        margin: 0 auto 24px;
-        text-align: center;
-    }
-
-    .main_visual {
-        width: 320px;
-        max-width: 90%;
-        margin: 40px auto 20px;
-    }
-
-    .fv_buttons_area {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        padding-left: 0;
-    }
-
-    .fv_buttons_area .btn_consultation,
-    .fv_buttons_area .btn_contact {
-        width: 200px;
-        max-width: 100%;
-        height: 55px;
-        font-size: 16px;
-    }
-
-    /* ------------------------------
-     2. Trouble Points
-     ------------------------------ */
-    @media (max-width: 768px) {
-
-        .trouble_points .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .trouble_points .section_title {
-            order: 1;
-            margin-bottom: 20px;
-        }
-
-        .problem_cards {
-            order: 2;
-            width: 100%;
-            max-width: 100%;
-
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 0;
-        }
-
-        /* スマホはabsoluteのメリットが薄いので、自然なフローに乗せる */
-        .problem-illustration {
-            order: 3;
-            position: relative;
-            left: auto;
-            top: auto;
-
-            width: 80%;
-            max-width: 350px;
-            margin: 0 auto 30px;
-        }
-
-        .problem_cards .card {
-            border-radius: 16px;
-            padding: 16px 8px;
-            min-height: 110px;
-        }
-
-        .problem_cards .card h3 {
-            font-size: 15px;
-            line-height: 1.5;
-        }
-    }
-
-    /* ------------------------------
-     4. DC Cards
-     ------------------------------ */
-    .dc_cards {
-        flex-direction: column;
-        gap: 40px;
-        padding: 0;
-        align-items: center;
-    }
-
-    .dc_card {
-        width: 100%;
-        max-width: 360px;
-    }
-
-    .dc_card:not(:last-child)::after {
-        top: auto;
-        bottom: -30px;
-        right: 50%;
-        transform: translateX(50%) rotate(90deg);
-        border-color: transparent transparent transparent var(--color-sub-3);
-    }
-
-    .dc_card_points {
-        margin-left: auto;
-        margin-right: auto;
-        width: fit-content;
-    }
-
-    /* ------------------------------
-     4. Video & Download
-     ------------------------------ */
-    .video_contents_wrap {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .video_block_left,
-    .video_block_right {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .video_block_right::before {
-        top: -26px;
-        left: 50%;
-        transform: translateX(-50%) rotate(90deg);
-    }
-
-    .guide_block {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .guide_block_title {
-        margin: 12px;
-    }
-
-    .guide_block_text {
-        margin: 12px 12px 24px 12px;
-    }
-
-    /* ------------------------------
-     Feature（あなたの既存ルール維持）
-     ------------------------------ */
-    .feature_dc {
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-    .feature_dc .container {
-        display: flex;
-        flex-direction: column;
-        padding: 24px;
-    }
-
-    .feature_dc .section_title {
-        margin-bottom: 40px;
-    }
-
-    .feature_list {
-        gap: 0;
-        width: 100%;
-    }
-
-    .feature_item {
-        flex-direction: column;
-        height: auto;
-        width: 100%;
-        max-width: 900%;
-        padding: 18px;
-        margin-bottom: 40px;
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-    .feature_item.is-second {
-        margin-left: 0;
-    }
-
-    .feature_index {
-        font-size: 80px;
-        margin-bottom: 10px;
-        -webkit-text-stroke: 2px #fff;
-        flex: 0 0 auto;
-    }
-
-    .feature_content {
-        margin-left: 0;
-        width: 100%;
-        align-items: center;
-    }
-
-    .feature_title {
-        text-align: center;
-        margin-bottom: 20px;
-        padding: 0 10px;
-    }
-
-    .feature_text {
-        width: 100%;
-        max-width: 100%;
-        min-height: auto;
-        padding: 15px;
-        box-sizing: border-box;
-        text-align: left !important;
-    }
-
-    .feature_img_sp {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 40px;
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
-
-    .feature_img_sp img {
-        max-width: 240px;
-        width: 80%;
-        height: auto;
-    }
-
-    .feature_illustrations.pc_only {
-        display: none;
-    }
-
-    /* ------------------------------
-     Support System
-     ------------------------------ */
-    .support_system {
-        padding: 60px 0;
-    }
-
-    .support_system .container {
-        padding: 0 24px;
-    }
-
-    .support_step+.support_step {
-        margin-top: 60px;
-    }
-
-    .support_step+.support_step::before {
-        display: none;
-    }
-
-    .support_point {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        padding-left: 0;
-        max-width: 100%;
-    }
-
-    .support_visual {
-        order: 1;
-        max-width: 320px;
-        margin: 0 auto;
-    }
-
-    .support_body {
-        order: 2;
-        align-items: left;
-        text-align: center;
-        max-width: 100%;
-    }
-
-    .support_step:nth-child(odd) .support_visual,
-    .support_step:nth-child(even) .support_visual {
-        order: 1;
-    }
-
-    .support_step:nth-child(odd) .support_body,
-    .support_step:nth-child(even) .support_body {
-        order: 2;
-    }
-
-    .support_icon {
-        align-items: left;
-        width: 120px;
-        margin: 0 auto 16px;
-    }
-
-    .support_title {
-        text-align: center;
-    }
-
-    .support_text {
-        text-align: left;
-    }
-
-    /* ------------------------------
-     Flow
-     ------------------------------ */
-    .flow_step {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        padding-bottom: 40px;
-    }
-
-    .flow_step:not(:last-child)::before,
-    .flow_step:not(:last-child)::after {
-        display: none;
-    }
-
-    .step_card {
-        flex: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        width: 90%;
-        padding: 24px;
-        height: auto;
-        min-height: 175px;
-        margin-bottom: 24px;
-    }
-
-    .step_card>img {
-        margin: 0 0 16px 0;
-        width: 60px;
-    }
-
-    .card_content {
-        width: 100%;
-        height: auto;
-    }
-
-    .flow_title {
-        text-align: center;
-        margin: 12px;
-    }
-
-    .flow_text {
-        text-align: left;
-        margin: 12px;
-    }
-
-    /* ------------------------------
-     CTA
-     ------------------------------ */
-    .cta_box {
-        max-width: 380px;
-    }
-
-    .cta_buttons {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
-
-    .cta_text {
-        padding-left: 4px;
-    }
-
-    /* ------------------------------
-     Footer（いったん置く：あなたの既存センター寄せは維持）
-     ------------------------------ */
-    .footer {
-        text-align: center;
-    }
-
-    footer.footer .container,
-    footer.footer .footer_inner,
-    footer.footer .footer_contents {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-    }
-
-    .footer_brand {
-        display: flex;
-        justify-content: center;
-    }
-
-    .footer_offices {
-        display: flex;
-        justify-content: center;
-    }
-
-    footer.footer img {
-        display: inline;
-        margin: 0 auto;
-        align-items: center;
-    }
-
-    .footer_top {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer_right {
-        align-items: center;
-        margin-top: 0;
-    }
-
-    .footer_policies {
-        text-align: center;
-    }
-
-    .footer_telfax {
-        display: flex;
-        justify-content: center;
-    }
-
-    footer.footer ul {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-    }
-
-    footer.footer li {
-        text-align: center;
-        margin-bottom: 24px;
-    }
+  /* ------------------------------
+   Global Typography / Spacing
+   ------------------------------ */
+  :root {
+    --fs-body: 15px;
+    --lh-body: 1.8;
+
+    --fs-h2: 28px;
+    --lh-h2: 1.35;
+
+    --fs-h3: 20px;
+    --lh-h3: 1.55;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  section {
+    padding: 50px 0;
+  }
+
+  /* h2 共通 */
+  .section_title {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
+    margin-bottom: 32px;
+  }
+
+  /* h3 共通（各所のバラつき止め） */
+  .dc_card_title,
+  .guide_block_title,
+  .video_block_label,
+  .support_title,
+  .flow_title,
+  .feature_title {
+    font-size: var(--fs-h3);
+    line-height: var(--lh-h3);
+  }
+
+  /* 本文 共通 */
+  .dc_text,
+  .dc_card_text,
+  .video_block_text,
+  .guide_block_text,
+  .support_text,
+  .flow_text,
+  .feature_text {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+  }
+
+  /* solution_intro は除外（既存の見た目を維持） */
+  .solution_intro .section_title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 36px;
+    display: inline-block;
+    transform: skewX(-8deg);
+  }
+
+  .solution_lead {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .badge_support {
+    display: inline-block;
+    padding: 4px 16px;
+    margin: 0 4px;
+    border-radius: 10px;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 24px;
+    white-space: nowrap;
+  }
+
+  /* ------------------------------
+   Header（ボタン小さすぎ対策）
+   ------------------------------ */
+  .header {
+    height: 60px;
+  }
+
+  .header_logo img {
+    height: 30px;
+  }
+
+  .header_actions {
+    gap: 10px;
+  }
+
+  .header_actions .btn_contact,
+  .header_actions .btn_consultation {
+    width: auto;
+    min-width: 130px;
+    height: 44px;
+    font-size: 14px;
+    padding: 0 14px;
+  }
+
+  /* ------------------------------
+   1. First View
+   ------------------------------ */
+  .first_view {
+    padding-top: 80px;
+    padding-bottom: 32px;
+  }
+
+  .first_view .container {
+    display: block;
+  }
+
+  .fv_content_wrapper {
+    width: 100%;
+  }
+
+  .fv_blue_box {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 24px;
+    padding: 24px 16px 28px;
+    box-sizing: border-box;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .eyebrow {
+    font-size: 18px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+  }
+
+  .fv_blue_box h1 {
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 24px;
+    white-space: nowrap;
+  }
+
+  .points_row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .points_row li {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    padding: 0;
+  }
+
+  .circle_text {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 360px;
+    margin: 0 auto 24px;
+    text-align: center;
+  }
+
+  .main_visual {
+    width: 320px;
+    max-width: 90%;
+    margin: 40px auto 20px;
+  }
+
+  .fv_buttons_area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding-left: 0;
+  }
+
+  .fv_buttons_area .btn_consultation,
+  .fv_buttons_area .btn_contact {
+    width: 200px;
+    max-width: 100%;
+    height: 55px;
+    font-size: 16px;
+  }
+
+  /* ------------------------------
+   2. Trouble Points
+   ------------------------------ */
+  .trouble_points .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trouble_points .section_title {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .problem_cards {
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 0;
+  }
+
+  .problem-illustration {
+    order: 3;
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 80%;
+    max-width: 350px;
+    margin: 0 auto 30px;
+  }
+
+  .problem_cards .card {
+    border-radius: 16px;
+    padding: 16px 8px;
+    min-height: 110px;
+  }
+
+  .problem_cards .card h3 {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  /* ------------------------------
+   4. DC Cards
+   ------------------------------ */
+  .dc_cards {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0;
+    align-items: center;
+  }
+
+  .dc_card {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .dc_card:not(:last-child)::after {
+    top: auto;
+    bottom: -30px;
+    right: 50%;
+    transform: translateX(50%) rotate(90deg);
+    border-color: transparent transparent transparent var(--color-sub-3);
+  }
+
+  .dc_card_points {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  }
+
+  /* ------------------------------
+   4. Video & Download
+   ------------------------------ */
+  .video_contents_wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .video_block_left,
+  .video_block_right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .video_block_right::before {
+    top: -26px;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
+
+  .guide_block {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .guide_block_title {
+    margin: 12px;
+  }
+
+  .guide_block_text {
+    margin: 12px 12px 24px 12px;
+  }
+
+  /* ------------------------------
+   Feature（重複なし版）
+   ------------------------------ */
+  .feature_dc {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .feature_dc .container {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .feature_dc .section_title {
+    margin-bottom: 40px;
+  }
+
+  .feature_list {
+    gap: 0;
+    width: 100%;
+  }
+
+  .feature_item {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 18px;
+    margin-bottom: 40px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .feature_item.is-second {
+    margin-left: 0;
+  }
+
+  .feature_index {
+    font-size: 80px;
+    margin-bottom: 10px;
+    -webkit-text-stroke: 2px #fff;
+    flex: 0 0 auto;
+  }
+
+  .feature_content {
+    margin-left: 0;
+    width: 100%;
+    align-items: center;
+  }
+
+  .feature_title {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .feature_text {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: left !important;
+  }
+
+  .feature_img_sp {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .feature_img_sp img {
+    max-width: 240px;
+    width: 80%;
+    height: auto;
+  }
+
+  .feature_illustrations.pc_only {
+    display: none;
+  }
+
+  /* ------------------------------
+   Support System
+   ------------------------------ */
+  .support_system {
+    padding: 60px 0;
+  }
+
+  .support_system .container {
+    padding: 0 24px;
+  }
+
+  .support_step + .support_step {
+    margin-top: 60px;
+  }
+
+  .support_step + .support_step::before {
+    display: none;
+  }
+
+  .support_point {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-left: 0;
+    max-width: 100%;
+  }
+
+  .support_visual {
+    order: 1;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .support_body {
+    order: 2;
+    align-items: flex-start; /* ← 修正 */
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .support_step:nth-child(odd) .support_visual,
+  .support_step:nth-child(even) .support_visual {
+    order: 1;
+  }
+
+  .support_step:nth-child(odd) .support_body,
+  .support_step:nth-child(even) .support_body {
+    order: 2;
+  }
+
+  .support_icon {
+    width: 120px;
+    margin: 0 auto 16px;
+  }
+
+  .support_title {
+    text-align: center;
+  }
+
+  .support_text {
+    text-align: left;
+  }
+
+  /* ------------------------------
+   Flow
+   ------------------------------ */
+  .flow_step {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 40px;
+  }
+
+  .flow_step:not(:last-child)::before,
+  .flow_step:not(:last-child)::after {
+    display: none;
+  }
+
+  .step_card {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 90%;
+    padding: 24px;
+    height: auto;
+    min-height: 175px;
+    margin-bottom: 24px;
+  }
+
+  .step_card > img {
+    margin: 0 0 16px 0;
+    width: 60px;
+  }
+
+  .card_content {
+    width: 100%;
+    height: auto;
+  }
+
+  .flow_title {
+    text-align: center;
+    margin: 12px;
+  }
+
+  .flow_text {
+    text-align: left;
+    margin: 12px;
+  }
+
+  /* ------------------------------
+   CTA
+   ------------------------------ */
+  .cta_box {
+    max-width: 380px;
+  }
+
+  .cta_buttons {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .cta_text {
+    padding-left: 4px;
+  }
+
+  /* ------------------------------
+   Footer
+   ------------------------------ */
+  .footer {
+    text-align: center;
+  }
+
+  footer.footer .container,
+  footer.footer .footer_inner,
+  footer.footer .footer_contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .footer_brand {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer_offices {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer.footer img {
+    display: inline;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .footer_top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer_right {
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .footer_policies {
+    text-align: center;
+  }
+
+  .footer_telfax {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer.footer ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  footer.footer li {
+    text-align: center;
+    margin-bottom: 24px;
+  }
 }
